@@ -1,0 +1,39 @@
+:root {
+	--container-w: 960px;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*TODO: change px units to var !!*/
+.container {
+	width: min(max(var(--container-w), 70%), 1440px);
+	height: max(640px, 80%);
+	border: 1px solid black;
+	border-radius: 10px;
+	overflow: hidden;
+	background-color: #e8e8e8;
+	/*background-image: url("./images/blueberry_small.jpg");*/
+	background-attachment: fixed;
+	flex: 0 0 auto;
+	display: flex;
+	flex-flow: row wrap;
+
+}
+.container > div:first-child {
+	width: calc(var(--container-w) / 3);
+	flex: 1 1 auto;
+	background-color: #bed4d3;
+	background-image: url("./images/blueberry_small.jpg");
+}
+.container > div:last-child {
+	width: calc((var(--container-w) / 3) * 2);
+	flex: 3 1 auto;
+	background-color: #cfbed4;
+}
