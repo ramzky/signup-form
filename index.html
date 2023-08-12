@@ -5,12 +5,60 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<title>Sign up Form</title>
 		<link rel="stylesheet" href="style.css" />
-		<script src="" defer></script>
+		<script src="script.js" defer></script>
 	</head>
 	<body>
 		<div class="container">
-			<div></div>
-			<div></div>
+			<div>
+				<div>
+					<p></p>
+				</div>
+			</div>
+			<div>
+				
+				<div class="box">
+					<p>
+						You know you need something like this in your life to help
+						you realize your deepest dreams. (Blueberry Cheesecakes!)
+					</p>
+					<form action="" method="post" id="newform">
+						<div class="field">
+							<label for="fname">First Name</label>
+							<input type="text" id="fname" name="first_name"
+								placeholder="Blueberry" maxlength="20" required />
+							<span></span>
+						</div>
+						<div class="field">
+							<label for="lname">Last Name</label>
+							<input type="text" id="lname" name="last_name" 
+								placeholder="Cheesecakes" maxlength="20" required />
+						</div>
+						<div class="field">
+							<label for="mail">Email</label>
+							<input type="email" id="mail" name="email" 
+								placeholder="bluec@gmail.com" />
+						</div>
+						<div class="field">
+							<label for="phone">Phone Number</label>
+							<input type="tel" id="phone" name="phone_num" 
+								placeholder="123456789" />
+						</div>
+						<div class="field">
+							<label for="pw">Password</label>
+							<input type="password" id="pw" name="password" required />
+						</div>
+						<div class="field">
+							<label for="cpw">Confirm Password</label>
+							<input type="password" id="cpw" name="confirm_pw" required />
+						</div>
+						
+					</form>
+					<button type="submit" form="newform">Create Account</button>
+					<p class=msg></p>
+				</div>
+				
+				
+			</div>
 		</div>
 	</body>
 </html>

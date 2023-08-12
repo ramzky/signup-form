@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&display=swap');
+
 :root {
 	--container-w: 960px;
+	--placeholder-color: #9b9b9b;
+	--border-btm: #9b9b9b;
+	--invalid-color: #ddd;
+	box-sizing: border-box;
+}
+* {
+	box-sizing: inherit;
 }
 
 body {
@@ -9,6 +18,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: #F3F5E2;
 }
 
 /*TODO: change px units to var !!*/
@@ -27,13 +37,138 @@ body {
 
 }
 .container > div:first-child {
-	width: calc(var(--container-w) / 3);
+	width: calc(100% / 3);
 	flex: 1 1 auto;
 	background-color: #bed4d3;
 	background-image: url("./images/blueberry_small.jpg");
 }
 .container > div:last-child {
-	width: calc((var(--container-w) / 3) * 2);
+	width: calc((100% / 3) * 2);
 	flex: 3 1 auto;
 	background-color: #cfbed4;
+
+}
+.container div:first-child > div {
+	margin-top: 192px;
+	/*border: 1px solid black;*/
+	display: flex;
+	justify-content: center;
+	/*background-image: url("./images/cake.svg");*/
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.container div:first-child > div > p:first-child {
+	font-family: 'Edu SA Beginner', cursive;
+	font-size: 35px;
+	font-weight: bold;
+	overflow-wrap: break-word;
+	text-align: center;
+}
+.container div:first-child > div > p::before {
+	content: '';
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	/*background-image: url("./images/cake.svg");*/
+	background-size: contain;
+}
+.box p:first-child {
+	font-family: 'Edu SA Beginner', cursive;
+	font-size: 28px;
+	padding-left: 40px;
+	margin-top: 20%;
+	inline-size: max(480px, 60%);
+	overflow-wrap: break-word;
+}
+.msg {
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	padding-left: 20px;
+	display: inline-block;
+	color: #D03737;
+}
+
+/*form below*/
+.container > div:last-child form {
+	/*border: 1px solid black;*/
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	display: flex;
+	flex-flow: row wrap;
+	/*justify-content: center;
+	align-items: center;*/
+	gap: 10px;
+}
+.field {
+	/*border: 1px solid black;*/
+	padding-left: 40px;
+	width: min(45%, 320px);
+	display: flex;
+	flex-flow: column wrap;
+}
+label{
+	font-size: 14px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+	font-size: 18px;
+	padding: 5px;
+	border: 0;
+	border-bottom: 2px solid var(--border-btm);
+	outline: 0;
+	background: transparent;
+	color: #2A1435;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder {
+	color: var(--placeholder-color);
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="password"]:focus {
+	--placeholder-color: transparent;
+	--border-btm: #2A1435;
+}
+input[type="text"]:invalid + span,
+input[type="email"]:invalid,
+input[type="password"]:invalid {
+	/*border-bottom: 2px solid #D03737;*/
+}
+input + span {
+  /*position: relative;*/
+}
+input + span::before {
+  /*position: absolute;
+  right: -20px;
+  top: 5px;*/
+}
+label[for="pw"]::after {
+	/*content: " Password do not match";
+  color: red;*/
+}
+
+
+button {
+	font-size: 18px;
+	margin-left: 40px;
+	margin-top: 40px;
+	padding: 5px 15px;
+	border: 0;
+	border-radius: 10px;
+	color: white;
+	background-color: #613775;
+	box-shadow: 0px 0px 3px #2A1435;
+	
+}
+button:hover {
+	background-color: #3B2247;
+	background-color: #613775;
+	box-shadow: inset 0px 0px 5px #B282CA;
+	color: #ddd;
+}
+button:active {
+	box-shadow: inset 0px 0px 3px #2A1435;
+	color: #aaa;
 }
